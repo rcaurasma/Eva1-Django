@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canciones de {{ album.nombre }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-4">
+    <h1 class="mb-4">Canciones de {{ album.nombre }}</h1>
+    <ul class="list-group mb-3">
+        {% for cancion in album.canciones %}
+            <li class="list-group-item">{{ cancion }}</li>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-secondary" href="{% url 'albumes' banda_id=banda_id %}">Volver a Álbumes</a>
+</div>
+</body>
+</html>
