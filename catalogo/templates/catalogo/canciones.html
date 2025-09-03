@@ -1,18 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Canciones de {{ album.nombre }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ album.nombre }} - {{ banda.nombre }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div class="container py-4">
-    <h1 class="mb-4">Canciones de {{ album.nombre }}</h1>
-    <ul class="list-group mb-3">
-        {% for cancion in album.canciones %}
-            <li class="list-group-item">{{ cancion }}</li>
-        {% endfor %}
-    </ul>
-    <a class="btn btn-secondary" href="{% url 'albumes' banda_id=banda_id %}">Volver a Álbumes</a>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'catalogo/img/albumes/' %}{{ album.imagen }}" class="img-fluid rounded" alt="{{ album.nombre }}">
+        </div>
+        <div class="col-md-8">
+            <h1 class="mb-2">{{ album.nombre }}</h1>
+            <h4 class="text-muted mb-4">{{ banda.nombre }}</h4>
+            <h5>Canciones:</h5>
+            <div class="list-group">
+                {% for cancion in album.canciones %}
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>{{ cancion.nombre }}</span>
+                    <span class="badge bg-primary rounded-pill">{{ cancion.duracion }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <a class="btn btn-secondary me-2" href="{% url 'lista_albumes' banda_id %}">← Volver a Álbumes</a>
+        <a class="btn btn-outline-secondary" href="{% url 'lista_bandas' %}">← Ir a Bandas</a>
+    </div>
 </div>
 </body>
 </html>
