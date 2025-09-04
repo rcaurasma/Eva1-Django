@@ -256,6 +256,57 @@ BANDAS_DATA = {
                 ]
             }
         }
+    },
+        'green_day': {
+        'nombre': 'Green Day',
+        'imagen': 'green_day.jpg',
+        'albumes': {
+            'dookie': {
+                'nombre': 'Dookie',
+                'imagen': 'green_day_album1.jpg',
+                'canciones': [
+                    {'nombre': 'Basket Case', 'duracion': '3:03'},
+                    {'nombre': 'When I Come Around', 'duracion': '2:58'},
+                    {'nombre': 'Longview', 'duracion': '3:59'}
+                ]
+            },
+            'american_idiot': {
+                'nombre': 'American Idiot',
+                'imagen': 'green_day_album2.jpg',
+                'canciones': [
+                    {'nombre': 'American Idiot', 'duracion': '2:54'},
+                    {'nombre': 'Boulevard of Broken Dreams', 'duracion': '4:20'},
+                    {'nombre': 'Holiday', 'duracion': '3:52'}
+                ]
+            },
+            '21st_century_breakdown': {
+                'nombre': '21st Century Breakdown',
+                'imagen': 'green_day_album3.jpg',
+                'canciones': [
+                    {'nombre': '21st Century Breakdown', 'duracion': '5:09'},
+                    {'nombre': 'Know Your Enemy', 'duracion': '3:11'},
+                    {'nombre': '21 Guns', 'duracion': '5:21'}
+                ]
+            },
+            'nimrod': {
+                'nombre': 'Nimrod',
+                'imagen': 'green_day_album4.jpg',
+                'canciones': [
+                    {'nombre': 'Hitchin’ a Ride', 'duracion': '2:51'},
+                    {'nombre': 'Nice Guys Finish Last', 'duracion': '2:49'},
+                    {'nombre': 'Good Riddance (Time of Your Life)', 'duracion': '2:34'}
+                ]
+            },
+            'insomniac': {
+                'nombre': 'Insomniac',
+                'imagen': 'green_day_album5.jpg',
+                'canciones': [
+                    {'nombre': 'Geek Stink Breath', 'duracion': '2:15'},
+                    {'nombre': 'Brain Stew', 'duracion': '3:13'},
+                    {'nombre': 'Jaded', 'duracion': '1:30'}
+                ]
+            }
+        }
     }
 }
 
