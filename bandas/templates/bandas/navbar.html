@@ -12,10 +12,13 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Bandas 2000s</a>
 
-    <div class="d-flex align-items-center ms-auto me-2">
-      <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-      </button>
+    <div class="d-flex align-items-center ms-auto me-3">
+        <span class="navbar-text me-3">
+            © 2025 Franco M. y Richard C.
+        </span>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Alternar tema">
+            <span id="themeIcon">🌙</span>
+        </button>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,14 +67,13 @@
       document.body.classList.remove('dark-mode');
       icon.textContent = '🌙';
     }
-  };
+  }
   const saved = localStorage.getItem('site-theme');
   if(saved) apply(saved);
   else {
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     apply(prefersDark ? 'dark' : 'light');
   }
-  // toggle click
   btn.addEventListener('click', function(){
     const isDark = document.body.classList.toggle('dark-mode');
     localStorage.setItem('site-theme', isDark ? 'dark' : 'light');

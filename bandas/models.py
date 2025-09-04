@@ -1,6 +1,5 @@
 from django.db import models
 
-# Datos de las bandas organizados como diccionarios
 BANDAS_DATA = {
     'acdc': {
         'nombre': 'AC/DC',
