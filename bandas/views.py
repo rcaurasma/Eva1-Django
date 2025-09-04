@@ -261,22 +261,22 @@ BANDAS_DATA = {
 
 # Vistas simples
 def lista_bandas(request):
-    return render(request, 'catalogo/bandas.html', {'bandas': BANDAS_DATA})
+    return render(request, 'bandas/bandas.html', {'bandas': BANDAS_DATA})
 
 def lista_albumes(request, banda_id):
     banda = BANDAS_DATA.get(banda_id)
     if not banda:
-        return render(request, 'catalogo/error.html', {'mensaje': 'Banda no encontrada'})
-    return render(request, 'catalogo/albumes.html', {'banda_id': banda_id, 'banda': banda})
+        return render(request, 'bandas/error.html', {'mensaje': 'Banda no encontrada'})
+    return render(request, 'bandas/albumes.html', {'banda_id': banda_id, 'banda': banda})
 
 def lista_canciones(request, banda_id, album_id):
     banda = BANDAS_DATA.get(banda_id)
     if not banda:
-        return render(request, 'catalogo/error.html', {'mensaje': 'Banda no encontrada'})
+        return render(request, 'bandas/error.html', {'mensaje': 'Banda no encontrada'})
     album = banda['albumes'].get(album_id)
     if not album:
-        return render(request, 'catalogo/error.html', {'mensaje': 'Álbum no encontrado'})
-    return render(request, 'catalogo/canciones.html', {
+        return render(request, 'bandas/error.html', {'mensaje': 'Álbum no encontrado'})
+    return render(request, 'bandas/canciones.html', {
         'banda_id': banda_id, 
         'album_id': album_id, 
         'banda': banda, 

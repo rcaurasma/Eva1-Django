@@ -9,12 +9,12 @@
 </head>
 <body class="bg-light">
 <div class="container py-4">
-    <h1 class="text-center mb-4">Catálogo Musical</h1>
+    <h1 class="text-center mb-4">Bandas populares de los 2000</h1>
     <div class="row">
         {% for banda_id, banda in bandas.items %}
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="{% static 'catalogo/img/bandas/' %}{{ banda.imagen }}" class="card-img-top" alt="{{ banda.nombre }}" style="height:200px;object-fit:cover;">
+                <img src="{% static 'bandas/img/bandas/' %}{{ banda.imagen }}" class="card-img-top" alt="{{ banda.nombre }}" style="height:200px;object-fit:cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ banda.nombre }}</h5>
                     <a href="{% url 'lista_albumes' banda_id %}" class="btn btn-primary mt-auto">Ver álbumes</a>
