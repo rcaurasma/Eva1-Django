@@ -1,0 +1,101 @@
+/* Fondo con 60% de opacidad y contenido por encima */
+html, body { height: 100%; margin: 0; }
+body {
+  position: relative;
+  background-color: #fff; /* color de respaldo */
+}
+
+/* fondo fijo (imagen en la misma carpeta que este CSS) */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('wallpaper.jpeg') center/cover no-repeat;
+  opacity: 0.6;                /* 60% opacidad */
+  pointer-events: none;       /* no interfiere con clicks */
+  z-index: 0;
+}
+
+/* asegurar que la UI esté por encima del pseudo-elemento */
+.navbar, .container, .card, .main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ajustes para el buscador/resultado (si usas .search-results) */
+.search-results {
+  position: absolute;
+  display: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  z-index: 1060; /* encima de navbar */
+  max-height: 300px;
+  overflow: auto;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #0f1720 !important;
+  color: #e6eef6;
+}
+body.dark-mode .navbar {
+  background-color: #0b1220 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+body.dark-mode .card {
+  background-color: #0f1724;
+  color: #e6eef6;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+body.dark-mode .card .card-title,
+body.dark-mode .card .card-text {
+  color: #e6eef6;
+}
+body.dark-mode .btn-primary {
+  background-color: #1f6feb;
+  border-color: #1f6feb;
+}
+body.dark-mode .form-control {
+  color: #e6eef6 !important;
+  background: #0b1220 !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+body.dark-mode .form-control::placeholder {
+  color: rgba(230,238,246,0.6) !important;
+}
+body.dark-mode .dropdown-menu, body.dark-mode .search-results {
+  background:#0b1220;
+  color:#e6eef6;
+  border:1px solid rgba(255,255,255,0.06);
+}
+body.dark-mode .navbar .nav-link {
+  color: #e6eef6;
+}
+body.dark-mode .navbar .nav-link:hover { color: #cfe8ff; }
+body.dark-mode .navbar-brand {
+  color: #e6eef6 !important;
+}
+body.dark-mode .search-results,
+body.dark-mode .search-results .list-group-item {
+  background: #0b1220 !important;
+  color: #e6eef6 !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* asegurar que el contenido esté por encima del pseudo-elemento del fondo */
+.navbar, .container, .card, .main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ajuste pequeño para el icono del botón */
+#themeToggle { padding: 0.25rem 0.5rem; line-height:1; }
+
+/* Opcional: mejorar visibilidad del toggler icon en dark mode */
+body.dark-mode .navbar-toggler {
+  border-color: rgba(230,238,246,0.08);
+}
